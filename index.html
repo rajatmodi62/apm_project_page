@@ -79,7 +79,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">[NeurIPS23] Asynchronous Perception Machine For Efficient Test Time Training</h1>
+          <h1 class="title is-1 publication-title">[NeurIPS'24] Asynchronous Perception Machine For Efficient Test Time Training</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://rajatmodi62.github.io/">Rajat Modi</a><sup>1</sup>,</span>
@@ -88,7 +88,7 @@
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Centre For Research In Computer Vision, UCF.</span>
+            <span class="author-block"><sup>1</sup>Centre For Research In Computer Vision, University Of Central Florida.</span>
           </div>
 
           <div class="column has-text-centered">
@@ -114,7 +114,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="https://www.youtube.com/watch?v=Ab90OVre8ok&ab_channel=rajatmodi"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -132,15 +132,16 @@
                   <span>Code</span>
                   </a>
               </span>
-              <!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+
+              <span class="link-block">
+                <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="far fa-images"></i>
+                      <i class="fab fa-github"></i>
                   </span>
-                  <span>Data</span>
-                  </a> -->
+                  <span>Blog</span>
+                  </a>
+              </span>
             </div>
 
           </div>
@@ -150,76 +151,16 @@
   </div>
 </section>
 
+              
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <img src="./static/images/cover.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">APM</span> is a NEW architecture for computationally-efficient test-time-training and getting Hinton's GLOM working. 
       </h2>
-    </div>
-  </div>
-</section>
-
-
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -233,233 +174,178 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            We present the first practical method towards making Hinton's GLOM work, and showcase the feasibility of encoding part-whole relationships in a neural net. 
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            In this work, we propose Asynchronous Perception Machine (APM), a computationally-efficient architecture for test-time-training (TTT). 
+            APM can process patches of an image one at a time in any order asymmetrically and still encode
+            semantic-awareness in the net. 
+            We demonstrate APM's ability to recognize out-of-distribution images without
+            dataset-specific pre-training, augmentation or any-pretext task. APM offers competitive performance over existing TTT approaches. 
+            To perform TTT, APM just distills test sample's representation once. APM possesses a unique property: 
+            it can learn using just this single representation and starts predicting semantically-aware features. 
+            APM's ability to recover semantic information from a global CLS token validates the insight that CLS tokens encode geometric-information of a given scene 
+            and can be recovered using appropriate inductive-biases. 
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            This offers a novel-insight with consequences for representational-learning. APM demostrates potential applications beyond test-time-training: 
+            APM can scale up to a dataset of 2D images and yield semantic-clusterings in a single forward pass. 
+            APM also provides first empirical evidence towards validating Hinton at Al's GLOM's insight, 
+            i.e. if input percept is a field. 
+            Therefore, APM helps our community converge towards an implementation which can  do both interpolation and perception on a shared-connectionist hardware. 
+            Our codebase has been made publicly available.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
-
-    <!-- Paper video. -->
+  
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+          <iframe src="https://www.youtube.com/embed/Ab90OVre8ok?si=ZKxizi9m5fy2sbSq"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
     <!--/ Paper video. -->
-  </div>
-</section>
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
-          <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
-          </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+    
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Hinton's Islands Of Agreement</h1>
+        <div class="publication-video">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hinton_islands.mp4"
                     type="video/mp4">
-          </video>
-        </div>
-      </div>
-      <!--/ Visual Effects. -->
-
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
+          </video>   
+          <div class="content has-text-justified">
+            <p>APM builds upon a new representation called Hinton's Islands of Agreement. The key idea is that at each location of the input image there is a high dimensional column vector. Clustering these column vectors yields  
+              islands of agreement, aka, regions of different colours which represent different parts of an object. Note that the above visualizations were obtained WITHOUT using ANY semantic-labels. Grouping happens as a part of bottom-up recognition only in a transformer like Mvitv2. Bounding-Box supervision is NOT needed.
+            </p> 
             </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
         </div>
       </div>
     </div>
-    <!--/ Concurrent Work. -->
 
+    
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Architecture of APM</h1>
+        <div class="publication-video">
+          <img src="./static/images/arch.jpg"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+          <div class="content has-text-justified">
+            <p> APM relies on a novel architecture which uses a mechanism called Folding-Unfolding. In (ii) the network exists in a "folded-state". This is the state of APM before the start of 
+              any forward pass. In (iii) the network is in an "unfolded-state". This is the state of APM after the start of a forward pass. The network can switch between these two states at any time.
+              During the unfolded phase, the network creates multiple location-aware columns each of which is independent. Each column is then feed-forwarded through the MLP to decode location specific-
+              features and RGB. Thus APM, can work for ANY 2D image, and does not require any complex model like ray-tracing used in Neural Fields. 
+            </p> 
+
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper video. -->
+    
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">APM does Asynchronous Perception</h1>
+        <div class="publication-video">
+          <img src="./static/images/perception.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+          <div class="content has-text-justified">
+            <p> APM feature Analysis: (i) TTT iterations on an input image leads to semantically aware
+              clustering. top: 2D t-sNE. bottom: 3D t-sNE. (ii) APM is trained via self-supervision using
+              DINOv2-Teacher. (from left) Input, Dinov2 grid, APM grid. APM’s grid closely approximates
+              Dinov2 grid evident from black regions in error map. Note that APM does asynchronous patch-based
+              processing whereas Dinov2 does parallel perception. (iii) Cifar-10 samples feed-forwarded through
+              SSL-trained APM yields features of significant semantic quality.
+            </p> 
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">APM can process 1 patch at a time and is 1000x faster than VIT. </h1>
+        <div class="publication-video">
+          <img src="./static/images/computational_analysis.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+          <div class="content has-text-justified">
+            <p> APM can process 1 patch at a time and still encode semantic awareness in the network. This is a unique property of APM. 
+              APM is 1000x faster than VIT.
+            </p> 
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">APM can learn from a Single Sample</h1>
+        <div class="publication-video">
+          <img src="./static/images/island.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+          <div class="content has-text-justified">
+            <p> Overfitting on a single distilled token representation leads to islands of agreement[10]:
+              APM is overfit on a test-sample’s representation distilled from a teacher. We plot t-sne clustering of
+              output features over 250ttt iterations. L2 loss between predicted features and distilled sample falls
+              from 1e-3 to 1e-12. Moving left to right shows that wholes break into smaller parts.
+            </p> 
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Test Time Training Results on Imagenet Splits</h1>
+        <div class="publication-video">
+          <img src="./static/images/ttt_imagenet.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">Test Time Training results on cross-generalization experiments</h1>
+        <div class="publication-video">
+          <img src="./static/images/ttt_cross_data_generalization.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{apm,
+  author    = {Modi, Rajat and Rawat, Yogesh Singh},
+  title     = {Asynchronous Perception Machine For Efficient Test Time Training},
+  journal   = {NeurIPS},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
 
 
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 </body>
 </html>
