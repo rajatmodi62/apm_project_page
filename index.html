@@ -79,7 +79,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">[NeurIPS'24] Asynchronous Perception Machine For Efficient Test Time Training</h1>
+          <h1 class="title is-1 publication-title">Asynchronous Perception Machine For Efficient Test Time Training</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://rajatmodi62.github.io/">Rajat Modi</a><sup>1</sup>,</span>
@@ -159,7 +159,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">APM</span> is a NEW architecture for computationally-efficient test-time-training and getting Hinton's GLOM working. 
+        <span class="dnerf">APM</span> is a NEW architecture for computationally-efficient test-time-training and getting Dr. Geoffrey Hinton sir's GLOM working. 
       </h2>
     </div>
   </div>
@@ -174,7 +174,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first practical method towards making Hinton's GLOM work, and showcase the feasibility of encoding part-whole relationships in a neural net via global supervision. 
+            We present the first practical method towards making Dr. Geoff Hinton sir's GLOM work, and showcase the feasibility of encoding part-whole relationships in a neural net via global supervision. 
           </p>
           <p>
             In this work, we propose Asynchronous Perception Machine (APM), a computationally-efficient architecture for test-time-training (TTT). 
@@ -200,9 +200,15 @@
     </div>
     <!--/ Abstract. -->
   
+
+    
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://youtube.com/clip/UgkxYQ1xAmDhTkESsNCDCbF57LmIo2JToTPk?si=9aVbEflVHJdDsehd"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/Ab90OVre8ok?si=ZKxizi9m5fy2sbSq"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -246,7 +252,7 @@
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
             <p> APM relies on a novel architecture which uses a mechanism called Folding-Unfolding. In (ii) the network exists in a "folded-state". This is the state of APM before the start of 
-              any forward pass. In (iii) the network is in an "unfolded-state". This is the state of APM after the start of a forward pass. The network can switch between these two states at any time.
+              any forward pass. In (iii) the network is in an "unfolded-state". This is the state of APM at the end of every forward pass. The network can switch between these two states at any time.
               During the unfolded phase, the network creates multiple location-aware columns each of which is independent. Each column is then feed-forwarded through the MLP to decode location specific-
               features and RGB. Thus APM, can work for ANY 2D image, and does not require any complex model like ray-tracing used in Neural Fields. 
             </p> 
