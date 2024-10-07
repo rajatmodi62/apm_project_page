@@ -133,16 +133,6 @@ body {
   border-radius: 10px;
 }
 
-/* .interpolation-panel .interpolation-image {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 56.25%;
-
-  overflow: hidden;
-  border-radius: 10px !important;
-} */
-
 .interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;
