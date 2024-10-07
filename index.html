@@ -285,7 +285,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -315,6 +315,24 @@
               APM is overfit on a test-sample’s representation distilled from a teacher. We plot t-sne clustering of
               output features over 250ttt iterations. L2 loss between predicted features and distilled sample falls
               from 1e-3 to 1e-12. Moving left to right shows that wholes break into smaller parts.
+            </p> 
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h1 class="title is-3">APM does Asynchronous Perception</h1>
+        <div class="publication-video">
+          <img src="./static/images/interpolate.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+          <div class="content has-text-justified">
+            <p> APM is a step towards validating GLOM’s insight [ 10 ]: input percept is a field. An
+              interpolation between any two images in the wild. This field arises in APM’s MLP consisting of 5
+              layers. Trigger column T acts as a key which retrieves an image from the APM’s memory. T resides
+              in a continuous embedding space, not discrete addressing space.
             </p> 
             </div>
         </div>
