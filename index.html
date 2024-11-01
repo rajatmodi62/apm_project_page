@@ -201,7 +201,9 @@
           <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/hinton_islands.mp4"
                     type="video/mp4">
-          </video>   
+          </video> 
+          
+          
           <div class="content has-text-justified">
             <p>APM builds upon a new representation called Hinton's Islands of Agreement. The key idea is that at each location of the input image there is a high dimensional column vector. Clustering these column vectors yields  
               islands of agreement, aka, regions of different colours which represent different parts of an object. Note that the above visualizations were obtained WITHOUT using ANY semantic-labels. Grouping happens as a part of bottom-up recognition only in a transformer like Mvitv2. Bounding-Box supervision is NOT needed.
@@ -418,33 +420,308 @@
         </div>
       </div>
     </div>
-
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h1 class="title is-3">Test Time Training Results on Imagenet Splits</h1>
-        <div class="publication-video">
-          <img src="./static/images/ttt_imagenet.png"
-      class="interpolation-image"
-      alt="Interpolate start reference image."/>
-        </div>
-      </div>
-    </div>
-
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h1 class="title is-3">Test Time Training results on cross-generalization experiments</h1>
-        <div class="publication-video">
-          <img src="./static/images/ttt_cross_data_generalization.png"
-      class="interpolation-image"
-      alt="Interpolate start reference image."/>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
+<section class="section">
+  <style>
+      .table-container {
+          overflow-x: auto; /* Enable horizontal scrolling if needed */
+          max-width: 1200px; /* Set a maximum width for the table */
+          margin: auto; /* Center the container */
+      }
 
+      table {
+          width: 100%; /* Table takes the full width of the container */
+          border-collapse: collapse;
+      }
+
+      th, td {
+          padding: 8px;
+          text-align: center;
+          border-bottom: 1px solid #ddd; /* Add a border below each row */
+      }
+
+      th {
+          background-color: #f2f2f2; /* Light gray background for header */
+      }
+
+      tr:hover {
+          background-color: #f5f5f5; /* Highlight row on hover */
+      }
+
+      tr:nth-child(even) {
+          background-color: #f9f9f9; /* Light gray for even rows */
+      }
+  </style>
+
+  <div class="table-container">
+      <table>
+          <caption><strong>APM's Robustness to Natural Distribution Shifts</strong>. CoOp and CoCoOp are tuned on ImageNet using 16-shot training data per category. Baseline CLIP, prompt ensemble, TPT and our APM do not require training data. A ✔ in P means that method leveraged <strong>pre-trained weights</strong> on clean variant of train set aka, Image-net and downstream-ttt on corrupted version.</caption>
+          <thead>
+              <tr>
+                  <th rowspan="2">Method</th>
+                  <th rowspan="2">P</th>
+                  <th colspan="1">ImageNet</th>
+                  <th colspan="1">ImageNet-A</th>
+                  <th colspan="1">ImageNet-v2</th>
+                  <th colspan="1">ImageNet-R</th>
+                  <th colspan="1">ImageNet-Sketch</th>
+                  <th rowspan="2">Average</th>
+                  <th rowspan="2">OOD Average</th>
+              </tr>
+              <tr>
+                  <th>Top1 acc. &#x2191;</th>
+                  <th>Top1 acc. &#x2191;</th>
+                  <th>Top1 acc. &#x2191;</th>
+                  <th>Top1 acc. &#x2191;</th>
+                  <th>Top1 acc. &#x2191;</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>CLIP-ViT-B/16</td>
+                  <td>✗</td>
+                  <td>66.7</td>
+                  <td>47.8</td>
+                  <td>60.8</td>
+                  <td>73.9</td>
+                  <td>46.0</td>
+                  <td>59.1</td>
+                  <td>57.2</td>
+              </tr>
+              <tr>
+                  <td>Ensemble</td>
+                  <td>✗</td>
+                  <td>68.3</td>
+                  <td>49.8</td>
+                  <td>61.8</td>
+                  <td><strong>77.6</strong></td>
+                  <td>48.2</td>
+                  <td>61.2</td>
+                  <td>59.4</td>
+              </tr>
+              <tr>
+                  <td>TPT</td>
+                  <td>✗</td>
+                  <td><strong>68.9</strong></td>
+                  <td><strong>54.7</strong></td>
+                  <td>63.4</td>
+                  <td>77.0</td>
+                  <td>47.9</td>
+                  <td>62.4</td>
+                  <td>60.8</td>
+              </tr>
+              <tr>
+                  <td>APM (Ours)</td>
+                  <td>✗</td>
+                  <td>68.1</td>
+                  <td>52.1</td>
+                  <td><strong>67.2</strong></td>
+                  <td>76.5</td>
+                  <td><strong>49.3</strong></td>
+                  <td><strong>62.6</strong></td>
+                  <td><strong>61.2</strong></td>
+              </tr>
+              <tr style="background-color: #F5F5F5;">
+                  <td style="color: gray;">CoOp</td>
+                  <td>✔</td>
+                  <td>71.5</td>
+                  <td>49.7</td>
+                  <td>64.2</td>
+                  <td>75.2</td>
+                  <td>47.9</td>
+                  <td>61.7</td>
+                  <td>59.2</td>
+              </tr>
+              <tr style="background-color: #F5F5F5;">
+                  <td style="color: gray;">CoCoOp</td>
+                  <td>✔</td>
+                  <td>71.0</td>
+                  <td>50.6</td>
+                  <td>64.0</td>
+                  <td>76.1</td>
+                  <td>48.7</td>
+                  <td>62.1</td>
+                  <td>59.9</td>
+              </tr>
+              <tr style="background-color: #F5F5F5;">
+                  <td style="color: gray;">TPT + CoOp</td>
+                  <td>✔</td>
+                  <td>73.6</td>
+                  <td>57.9</td>
+                  <td>66.8</td>
+                  <td>77.2</td>
+                  <td>49.2</td>
+                  <td>64.9</td>
+                  <td>62.8</td>
+              </tr>
+              <tr style="background-color: #F5F5F5;">
+                  <td style="color: gray;">TPT + CoCoOp</td>
+                  <td>✔</td>
+                  <td>71.0</td>
+                  <td>58.4</td>
+                  <td>64.8</td>
+                  <td>78.6</td>
+                  <td>48.4</td>
+                  <td>64.3</td>
+                  <td>62.6</td>
+              </tr>
+              <tr>
+                  <td>CLIP VIT-L/14</td>
+                  <td>✗</td>
+                  <td>76.2</td>
+                  <td>69.6</td>
+                  <td>72.1</td>
+                  <td>85.9</td>
+                  <td>58.8</td>
+                  <td>72.5</td>
+                  <td>71.6</td>
+              </tr>
+              <tr>
+                  <td>APM (Ours)</td>
+                  <td>✗</td>
+                  <td><strong>77.3</strong></td>
+                  <td><strong>71.8</strong></td>
+                  <td><strong>72.8</strong></td>
+                  <td><strong>87.1</strong></td>
+                  <td><strong>62.2</strong></td>
+                  <td><strong>74.2</strong></td>
+                  <td><strong>73.4</strong></td>
+              </tr>
+              <tr>
+                  <td>OpenCLIP-VIT-H/14</td>
+                  <td>✗</td>
+                  <td>81.6</td>
+                  <td>79.1</td>
+                  <td>80.7</td>
+                  <td>92.9</td>
+                  <td>72.8</td>
+                  <td>81.4</td>
+                  <td>81.3</td>
+              </tr>
+              <tr>
+                  <td>APM (Ours)</td>
+                  <td>✗</td>
+                  <td><strong>84.6</strong></td>
+                  <td><strong>84.2</strong></td>
+                  <td><strong>83.9</strong></td>
+                  <td><strong>94.9</strong></td>
+                  <td><strong>77.1</strong></td>
+                  <td><strong>84.9</strong></td>
+                  <td><strong>85.0</strong></td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <div class="table-container">
+    <table>
+        <caption><strong>Cross-dataset generalization</strong> from ImageNet to fine-grained classification datasets. CoOp and CoCoOp are tuned on ImageNet using 16-shot training data per category. Baseline CLIP, prompt ensemble, TPT, and APM do not require training data or annotations. We report top-1 accuracy.</caption>
+        <thead>
+            <tr>
+                <th rowspan="2">Method</th>
+                <th rowspan="2">P</th>
+                <th rowspan="2">Flower102</th>
+                <th rowspan="2">DTD</th>
+                <th rowspan="2">Pets</th>
+                <th rowspan="2">UCF101</th>
+                <th rowspan="2">Caltech101</th>
+                <th rowspan="2">Food101</th>
+                <th rowspan="2">SUN397</th>
+                <th rowspan="2">Aircraft</th>
+                <th rowspan="2">EuroSAT</th>
+                <th rowspan="2">Average</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr style="background-color: #F5F5F5;">
+                <td><span style="color: gray;">CoOp</span></td>
+                <td>✓</td>
+                <td>68.7</td>
+                <td>41.9</td>
+                <td>89.1</td>
+                <td>66.5</td>
+                <td>93.7</td>
+                <td>85.3</td>
+                <td>64.2</td>
+                <td>18.5</td>
+                <td>46.4</td>
+                <td>63.9</td>
+            </tr>
+            <tr style="background-color: #F5F5F5;">
+                <td><span style="color: gray;">CoCoOp</span></td>
+                <td>✓</td>
+                <td>70.9</td>
+                <td>45.5</td>
+                <td>90.5</td>
+                <td>68.4</td>
+                <td>93.8</td>
+                <td>84.0</td>
+                <td>66.9</td>
+                <td>22.3</td>
+                <td>39.2</td>
+                <td>64.6</td>
+            </tr>
+            <tr>
+                <td>CLIP-ViT-B/16</td>
+                <td>✗</td>
+                <td>67.4</td>
+                <td>44.3</td>
+                <td><strong>88.3</strong></td>
+                <td>65.1</td>
+                <td>93.4</td>
+                <td>83.7</td>
+                <td>62.6</td>
+                <td>23.7</td>
+                <td>42.0</td>
+                <td>63.6</td>
+            </tr>
+            <tr>
+                <td>Ensemble</td>
+                <td>✗</td>
+                <td>67.0</td>
+                <td>45.0</td>
+                <td>86.9</td>
+                <td>65.2</td>
+                <td>93.6</td>
+                <td>82.9</td>
+                <td>65.6</td>
+                <td>23.2</td>
+                <td>50.4</td>
+                <td>64.6</td>
+            </tr>
+            <tr>
+                <td>TPT</td>
+                <td>✗</td>
+                <td><strong>69.0</strong></td>
+                <td>47.8</td>
+                <td>87.8</td>
+                <td>68.0</td>
+                <td><strong>94.2</strong></td>
+                <td><strong>84.7</strong></td>
+                <td>65.5</td>
+                <td>24.8</td>
+                <td>42.4</td>
+                <td>65.1</td>
+            </tr>
+            <tr>
+                <td>APM (Ours)</td>
+                <td>✗</td>
+                <td>62.0</td>
+                <td><strong>48.9</strong></td>
+                <td>81.6</td>
+                <td><strong>72.6</strong></td>
+                <td>89.6</td>
+                <td>84.2</td>
+                <td><strong>65.7</strong></td>
+                <td><strong>29.7</strong></td>
+                <td><strong>55.7</strong></td>
+                <td><strong>65.5</strong></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</section>
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -491,7 +768,7 @@ of expansion and contraction[ 79]. Drawing inspiration from these fundamental in
 column T undergoes these cycles of folding and unfolding during the learning iterations.
             </p>
 
-            
+
           <img src="./static/images/automaton.jpg"
       class="interpolation-image"
       alt="Interpolate start reference image."/>
@@ -543,6 +820,12 @@ APM.
         </div>
       </div>
     </div>
+  </section>
+
+  
+
+    
+  
     
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
