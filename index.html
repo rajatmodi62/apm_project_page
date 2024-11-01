@@ -228,35 +228,35 @@
     
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h1 class="title is-3"> Honoring Alan Turing</h1>
+        <h1 class="title is-3"> Honoring Alan Turing <br> And  <br> Geoffrey Everest Hinton</h1>
         <img src="./static/images/turing.jpg"
         class="interpolation-image"
         alt="Interpolate start reference image."/>
         <div class="content has-text-justified">
-          <p> We fondly remember Alan turing: a man who was far beyond his times. His ideas carried us far, especially his ideal models of turing machines. Now, it is time to build upon the collective efforts of many brilliant minds and their collective contributions. 
-            We are humbled to present our work on APM, a new architecture for computationally-efficient test-time-training.
+          <p> We fondly remember Alan turing: a man who was far beyond his times. His ideas carried us far, especially his computational models of turing machines. Sadly, the cruel society of then didn't fully appreciate his contributions to the war, and in preventing the loss of million of lives. Instead, he died of cyanide poisoning from bite of an apple. 
           </p> 
 
-          <p>APM builds upon a new representation called Hinton's Islands of Agreement. The key idea is that at each location of the input image there is a high dimensional column vector. Clustering these column vectors yields  
-            islands of agreement, aka, regions of different colours which represent different parts of an object. Note that the above visualizations were obtained WITHOUT using ANY semantic-labels. Grouping happens as a part of bottom-up recognition only in a transformer like Mvitv2. Bounding-Box supervision is NOT needed.
-          </p> 
+          <p>
+            Luckily, we live in a better and kinder world now. It is amazing to see, what a single man could do with slow computing machines of his times. And now, it is time to build upon the collective efforts of many brilliant minds and their collective contributions.      
+           </p>
+
+           <p>
+            Turing's insight was that the morphogenesis happens via a simple mechanism. First, a single cell copies  itself many times, and yields the entire organism. This was Geoffrey Hinton's idea: different tokens in the network can communicate between themselves 
+            and yield islands of agreement. This is also known as parallel perception. It works well, but creates a big memory scaling issue. 
+           </p>
+
+           
+           <p>
+            APM's insight is that biology is lazy: the organism is formed as a consequence of bfs-growing over a reproductive cycle. We can be more creative on a machine. We can create a single DNA for each location, and let them express their <b> features</b> in parallel
+            without ever communicating between themselves. This leads to a fundamentally new way to do machine perception.
+           </p>
+
+           <p>
+            Behold!!! Machine are hereby gifted a new ability: they can express whatever features they want, wherever they want. Let this fundamental operator called folding-unfolding serve us all. 
+           </p>
           <!-- </div> -->
       </div>  
-        <div style="text-align: center; margin: 20px; position: relative; padding-top: 56.25%; /* 16:9 aspect ratio */">
-            <video autoplay controls muted loop playsinline 
-                   style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                <source src="./static/videos/hinton_islands.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-          <div class="content has-text-justified">
-            <p>APM builds upon a new representation called Hinton's Islands of Agreement. The key idea is that at each location of the input image there is a high dimensional column vector. Clustering these column vectors yields  
-              islands of agreement, aka, regions of different colours which represent different parts of an object. Note that the above visualizations were obtained WITHOUT using ANY semantic-labels. Grouping happens as a part of bottom-up recognition only in a transformer like Mvitv2. Bounding-Box supervision is NOT needed.
-            </p> 
-            <!-- </div> -->
-        </div>
-      </div>
-    </div>
+        
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -285,10 +285,9 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> APM relies on a novel architecture which uses a mechanism called Folding-Unfolding. In (ii) the network exists in a "folded-state". This is the state of APM before the start of 
-              any forward pass. In (iii) the network is in an "unfolded-state". This is the state of APM at the end of every forward pass. The network can switch between these two states at any time.
+            <p> APM relies on a novel Folding-Unfolding mechanism. The network can switch between these two states at any time.
               During the unfolded phase, the network creates multiple location-aware columns each of which is independent. Each column is then feed-forwarded through the MLP to decode location specific-
-              features and RGB. Thus APM, can work for ANY 2D image, and does not require any complex model like ray-tracing used in Neural Fields. 
+              features and RGB.  
             </p> 
 
             </div>
@@ -384,8 +383,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+           
             </div>
         </div>
       </div>
@@ -399,8 +397,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+            
             </div>
         </div>
       </div>
@@ -414,8 +411,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+             
             </div>
         </div>
       </div>
@@ -429,8 +425,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+             
             </div>
         </div>
       </div>
@@ -445,8 +440,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+             
             </div>
         </div>
       </div>
@@ -461,8 +455,7 @@
       class="interpolation-image"
       alt="Interpolate start reference image."/>
           <div class="content has-text-justified">
-            <p> A figure showing that doing asynchronous patch-based processing can lead to almost identical features as doing parallel-perception via a transformer. Asynchronous perception therefore helps save machine memory, while remaining fundamentally identical to a large model like a transformer. 
-            </p> 
+            
             </div>
         </div>
       </div>
