@@ -841,6 +841,32 @@ APM.
   </section>
 
 
+  <!-- Paper video. -->
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h1 class="title is-3">Hinton's Islands Of Agreement</h1>
+      <!-- <div class="publication-video">
+        <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/hinton_islands.mp4"
+                  type="video/mp4">
+        </video>  -->
+        
+        <div style="text-align: center; margin: 20px; position: relative; padding-top: 56.25%; /* 16:9 aspect ratio */">
+          <video autoplay controls muted loop playsinline 
+                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+              <source src="./static/videos/hinton_islands.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+        <div class="content has-text-justified">
+          <p>APM builds upon a new representation called Hinton's Islands of Agreement. The key idea is that at each location of the input image there is a high dimensional column vector. Clustering these column vectors yields  
+            islands of agreement, aka, regions of different colours which represent different parts of an object. Note that the above visualizations were obtained WITHOUT using ANY semantic-labels. Grouping happens as a part of bottom-up recognition only in a transformer like Mvitv2. Bounding-Box supervision is NOT needed.
+          </p> 
+          <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
