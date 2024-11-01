@@ -459,6 +459,10 @@ scientific inspirations which motivated the design of APM. We discuss some of th
 a deeper-connection and ground our intuitions.
           </p>
           <p>
+            <img src="./static/images/baby.png"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
+
             <b> A biological analogy </b>: Consider how an organism starts its existence from a cell. The cell is
 copied across different body locations. Each location possesses identical DNA. However, depending
 on the location, the DNA decides whether to form an eye or nose. We term this process as unfolding, i.e. a cell ‘expands’ to yield an organism. Next, there is evidence of jellyfish like Turritopsis dohrnii
@@ -466,13 +470,31 @@ reverting from their fully grown form to younger polyp states. We term this proc
 i.e. cells of an organism collapse back to the single cell it began from.
           </p>
           <p>
-           <b> A computational analogy</b>: We now start treating an image I as a digital organism. It starts from
+            <img src="./static/images/arch.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+            <b> A computational analogy</b>: We now start treating an image I as a digital organism. It starts from
             some compressed representation T . T unfolds to yield the image I. I then folds back to yield the
             compressed representation T . Learning proceeds by oscillating between these unfolded and folded
             phases. At every step, the net is trying to reconstruct image I from T . T is then expected to be a
             dense vector-space
           </p>
 
+          <p>
+            <img src="./static/images/bigbang.jpg"
+            class="interpolation-image"
+            alt="Interpolate start reference image."/>
+            <b> A cosmological analogy </b>: In physics, one of the famous theories of the origin of universe has been
+starting from a single point, and undergoing a continuous expansion[ 50 ]. There are alternate theories
+for eg, Conformal Cyclic Cosmology[75 ] which hypothesize the universe undergoing periodic cycles
+of expansion and contraction[ 79]. Drawing inspiration from these fundamental insights, the trigger
+column T undergoes these cycles of folding and unfolding during the learning iterations.
+            </p>
+
+            
+          <img src="./static/images/automaton.jpg"
+      class="interpolation-image"
+      alt="Interpolate start reference image."/>
           <p>
             <b>A cellular-automaton analogy</b>: On surface it seems a pretty trivial matter to discuss: a point
 can expand and yield beautiful patterns which can either be an entire universe in accordance with the
@@ -516,6 +538,8 @@ differ among their configurations at later point in their lifespans. Fluctuation
 to mutations. We compensate for this fact by weight-sharing the MLP across different locations in
 APM.
           </p>
+
+     
         </div>
       </div>
     </div>
